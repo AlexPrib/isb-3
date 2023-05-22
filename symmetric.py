@@ -8,7 +8,7 @@ logger = logging.getLogger()
 logger.setLevel('INFO')
 
 
-class symmetric_code:
+class Symmetric:
     def __init__(self, path: str) -> None:
         """Loading settings
 

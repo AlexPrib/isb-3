@@ -52,14 +52,14 @@ class CryptoSystemGUI(QMainWindow):
         try:
             file_name, _ = QFileDialog.getOpenFileName(
                 self, 'Open Settings File', '', 'Settings Files (*.json)')
-            self.asymmetric_system = asymmetric_code(file_name)
-            self.symmetric_system = symmetric_code(file_name)
+            self.asymmetric_system = Asymmetric(file_name)
+            self.symmetric_system = Symmetric(file_name)
             self.settings = self.symmetric_system.settings
             QMessageBox.information(
                 self, 'Settings', f'Settings file loaded successfully from file {file_name}')
         except OSError as err:
-            self.asymmetric_system = asymmetric_code(DEFAULT_SETTINGS_WAY)
-            self.symmetric_system = symmetric_code(DEFAULT_SETTINGS_WAY)
+            self.asymmetric_system = Asymmetric(DEFAULT_SETTINGS_WAY)
+            self.symmetric_system = Symmetric(DEFAULT_SETTINGS_WAY)
             self.settings = self.symmetric_system.settings
             QMessageBox.information(
                 self, 'Settings', f'The settings file failed to load from the file {file_name}.'

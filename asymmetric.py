@@ -9,7 +9,7 @@ logger = logging.getLogger()
 logger.setLevel('INFO')
 
 
-class asymmetric_code:
+class Asymmetric:
     def __init__(self, path: str) -> None:
         """Loading settings
 
